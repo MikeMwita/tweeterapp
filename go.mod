@@ -1,5 +1,9 @@
 module github.com/MikeMwita/tweeterapp
 
-go 1.16
+go 1.19
 
-require github.com/dghubble/go-twitter v0.0.0-20220816163853-8a0df96f1e6d // indirect
+require (
+	github.com/MikeMwita/tweeterapp v0.0.0-20221014204742-3765274df5f2
+	github.com/spf13/cobra v1.6.1
+	golang.org/x/oauth2 v0.1.0 // indirect
+)

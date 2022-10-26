@@ -13,7 +13,7 @@ type Config struct {
 }
 
 func NewConfig() (*Config, error) {
-	ck, ok := os.LookupEnv("Twconsumerkey")
+	ck, ok := os.LookupEnv("TW_CONSUMER_KEY")
 	if !ok {
 		return nil, errors.New("CK need to be set")
 	}

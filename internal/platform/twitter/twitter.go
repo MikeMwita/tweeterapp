@@ -2,27 +2,21 @@ package twitter
 
 import (
 	"github.com/MikeMwita/tweeterapp/config"
+	"github.com/MikeMwita/tweeterapp/internal/common"
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/dghubble/oauth1"
 	"log"
 )
-type Tw struct {
-	Search  *SearchService
-	Streams *StreamService
-
-	//add  the expected twitter api serrvices
+type Client struct {
 
 }
 
+var Client = (common.SocialInterface())(nil)
+
 func NewClient(cfg *config.Config) (*Tw, error) {
-	//passing in the keys
 	config := oauth1.NewConfig(config.ck, config.csk)
-	//tokens
 	token := oauth1.NewToken(config.At, config.Ats)
 	httpClient := config.Client(oauth1.NoContext, token)
-
-
-	//initializing the twitter client
 
 	client := twitter.NewClient(httpClient)
 	client,err :=getClient(&config){
@@ -32,8 +26,6 @@ func NewClient(cfg *config.Config) (*Tw, error) {
 		}
 	}
 
-	// send a tweet
-
 	tweet, resp, err := client.Statuses.Update("setting up a twitter client", nil)
 	if err != nil {
 		log.Fatal(err)
@@ -42,7 +34,6 @@ func NewClient(cfg *config.Config) (*Tw, error) {
 	log.Printf("%v\n",resp)
 }
 
-//search for a tweet
 type search struct {
 	search, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
 		Query:"kipchoge"

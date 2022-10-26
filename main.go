@@ -11,7 +11,7 @@ import (
 
 func main() {
 	fmt.Println("Our twitter bot")
+
 	cmd.Execute()
-	//loading the client here
 
 }

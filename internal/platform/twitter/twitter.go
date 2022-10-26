@@ -6,24 +6,19 @@ import (
 	"github.com/dghubble/oauth1"
 	"log"
 )
+
 type Tw struct {
 	Search  *SearchService
 	Streams *StreamService
-
-	//add  the expected twitter api serrvices
-
 }
-
 func NewClient(cfg *config.Config) (*Tw, error) {
 	//passing in the keys
 	config := oauth1.NewConfig(config.ck, config.csk)
 	//tokens
 	token := oauth1.NewToken(config.At, config.Ats)
 	httpClient := config.Client(oauth1.NoContext, token)
-
-
+	
 	//initializing the twitter client
-
 	client := twitter.NewClient(httpClient)
 	client,err :=getClient(&config){
 		if err!=nil{
@@ -31,9 +26,7 @@ func NewClient(cfg *config.Config) (*Tw, error) {
 			log.Println(err)
 		}
 	}
-
 	// send a tweet
-
 	tweet, resp, err := client.Statuses.Update("setting up a twitter client", nil)
 	if err != nil {
 		log.Fatal(err)
@@ -55,4 +48,5 @@ type search struct {
 	log.printf("%v",resp)
 
 }
+
 

@@ -7,7 +7,13 @@ package main
 import (
 	"fmt"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	"github.com/MikeMwita/tweeterapp.git/cmd"
+=======
+	"github.com/MikeMwita/tweeterapp/cmd"
+	"github.com/MikeMwita/tweeterapp/internal/platform/twitter"
+	"log"
+>>>>>>> Stashed changes
 =======
 	"github.com/MikeMwita/tweeterapp/cmd"
 	"github.com/MikeMwita/tweeterapp/internal/platform/twitter"
@@ -25,8 +31,13 @@ func getClient() error {
 }
 func main() {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	fmt.Println("Our twitter bot")
 
+=======
+	getClient()
+	fmt.Println("Our twitter bot")
+>>>>>>> Stashed changes
 =======
 	getClient()
 	fmt.Println("Our twitter bot")

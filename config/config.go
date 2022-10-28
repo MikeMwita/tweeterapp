@@ -14,7 +14,11 @@ type Config struct {
 
 func NewConfig() (*Config, error) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	ck, ok := os.LookupEnv("Twconsumerkey")
+=======
+	ck, ok := os.LookupEnv("CONSUMER_KEY")
+>>>>>>> Stashed changes
 =======
 	ck, ok := os.LookupEnv("CONSUMER_KEY")
 >>>>>>> Stashed changes

@@ -6,6 +6,7 @@ import (
 )
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // rootCmd represents the base command when called without any subcommands
 var (
 	persistRootFlag bool
@@ -28,6 +29,8 @@ var (
 	}
 )
 =======
+=======
+>>>>>>> Stashed changes
 var (
 	persistRootFlag bool
 	rootCmd         = &cobra.Command{
@@ -51,8 +54,12 @@ func Execute() {
 }
 func init() {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	rootCmd.PersistentFlags().BoolVarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
 	rootCmd.AddCommand(searchCmd)
+=======
+	rootCmd.PersistentFlags().BoolvarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
+>>>>>>> Stashed changes
 =======
 	rootCmd.PersistentFlags().BoolvarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
 >>>>>>> Stashed changes

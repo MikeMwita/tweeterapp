@@ -1,16 +1,11 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
 	"fmt"
 	"os"
-
-	"github.com/spf13/cobra"
 )
 
+<<<<<<< Updated upstream
 // rootCmd represents the base command when called without any subcommands
 var (
 	persistRootFlag bool
@@ -32,6 +27,21 @@ var (
 		},
 	}
 )
+=======
+var (
+	persistRootFlag bool
+	rootCmd         = &cobra.Command{
+		Use:   "tweeterapp",
+		Short: "A brief description of your application",
+		Long:  `A longer description `,
+	}
+)
+var searchCmd = &cobra.Command{
+	Use:   "searching for twitter handles",
+	Short: "",
+	Long:  "",
+}
+>>>>>>> Stashed changes
 
 func Execute() {
 	err := rootCmd.Execute()
@@ -39,8 +49,11 @@ func Execute() {
 		os.Exit(1)
 	}
 }
-
 func init() {
+<<<<<<< Updated upstream
 	rootCmd.PersistentFlags().BoolVarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
 	rootCmd.AddCommand(searchCmd)
+=======
+	rootCmd.PersistentFlags().BoolvarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
+>>>>>>> Stashed changes
 }

@@ -6,36 +6,37 @@ import (
 )
 
 type Config struct {
-	TwConsumerKey     string
-	TwConsumerSecret  string
+	ConsumerKey       string
+	ConsumerSecret    string
 	AccessToken       string
 	AccessTokenSecret string
 }
 
 func NewConfig() (*Config, error) {
+<<<<<<< Updated upstream
 	ck, ok := os.LookupEnv("Twconsumerkey")
+=======
+	ck, ok := os.LookupEnv("CONSUMER_KEY")
+>>>>>>> Stashed changes
 	if !ok {
-		return nil, errors.New("CK need to be set")
+		return nil, errors.New("consumer key need to be set")
+	}
+	csk, ok := os.LookupEnv("CONSUMER_SECRET")
+	if !ok {
+		return nil, errors.New(" Consumer_secret key needs to be set")
+	}
+	At, ok := os.LookupEnv("ACCESS_TOKEN")
+	if !ok {
+		return nil, errors.New("the access_token is missing")
 	}
 
-	csk, ok := os.LookupEnv("TwConsumerSecret")
+	Ats, ok := os.LookupEnv("ACCESS_TOKEN_SECRET")
 	if !ok {
-		return nil, errors.New("The consumer secret key needs to be set")
+		return nil, errors.New("the access_token secret key is missing")
 	}
-
-	At, ok := os.LookupEnv("AccessToken")
-	if !ok {
-		return nil, errors.New("the access token is missing")
-	}
-
-	Ats, ok := os.LookupEnv("AccessTokenSecret")
-	if !ok {
-		return nil, errors.New("the accesstoken secret key is missing")
-	}
-
 	return &Config{
-		TwConsumerKey:     ck,
-		TwConsumerSecret:  csk,
+		ConsumerKey:       ck,
+		ConsumerSecret:    csk,
 		AccessToken:       At,
 		AccessTokenSecret: Ats,
 	}, nil

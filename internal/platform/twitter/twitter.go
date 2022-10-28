@@ -2,6 +2,7 @@ package twitter
 
 import (
 	"github.com/MikeMwita/tweeterapp/config"
+<<<<<<< Updated upstream
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/dghubble/oauth1"
 	"log"
@@ -27,6 +28,18 @@ func NewClient(cfg *config.Config) (*Tw, error) {
 		}
 	}
 	// send a tweet
+=======
+	"log"
+)
+type Client struct {
+	return  common.Socialinterface()
+}
+func NewClient(cfg *config.Config) (*Tw, error) {
+	config := oauth1.NewConfig(config.ConsumerKey, config.ConsumerSecret)
+	token := oauth1.NewToken(config.AccessToken, config.AccessTokenSecret)
+	httpClient := config.Client(oauth1.NoContext, token)
+}
+>>>>>>> Stashed changes
 	tweet, resp, err := client.Statuses.Update("setting up a twitter client", nil)
 	if err != nil {
 		log.Fatal(err)
@@ -34,19 +47,22 @@ func NewClient(cfg *config.Config) (*Tw, error) {
 	log.Printf("%v\n",tweet)
 	log.Printf("%v\n",resp)
 }
+<<<<<<< Updated upstream
 
 //search for a tweet
 type search struct {
 	search, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
+=======
+func search()err {
+	search,resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
+>>>>>>> Stashed changes
 		Query:"kipchoge"
 	})
-
 	if err!=nil{
 		log.Fatal(err)
 }
 	log.printf("%v",search)
 	log.printf("%v",resp)
-
 }
 
 

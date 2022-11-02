@@ -5,9 +5,6 @@ import (
 	"os"
 )
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-// rootCmd represents the base command when called without any subcommands
 var (
 	persistRootFlag bool
 	rootCmd         = &cobra.Command{
@@ -18,7 +15,6 @@ var (
 			fmt.Println("hello from the root command ")
 		},
 	}
-
 	searchCmd = &cobra.Command{
 		Use:   "for searching through the tweets",
 		Short: "Look for a tweet with  the name Kipchoge ",
@@ -28,23 +24,6 @@ var (
 		},
 	}
 )
-=======
-=======
->>>>>>> Stashed changes
-var (
-	persistRootFlag bool
-	rootCmd         = &cobra.Command{
-		Use:   "tweeterapp",
-		Short: "A brief description of your application",
-		Long:  `A longer description `,
-	}
-)
-var searchCmd = &cobra.Command{
-	Use:   "searching for twitter handles",
-	Short: "",
-	Long:  "",
-}
->>>>>>> Stashed changes
 
 func Execute() {
 	err := rootCmd.Execute()
@@ -53,14 +32,6 @@ func Execute() {
 	}
 }
 func init() {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	rootCmd.PersistentFlags().BoolVarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
-	rootCmd.AddCommand(searchCmd)
-=======
 	rootCmd.PersistentFlags().BoolvarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
->>>>>>> Stashed changes
-=======
-	rootCmd.PersistentFlags().BoolvarP(&persistRootFlag, "persistFlag", "p", false, "a persistent root flag")
->>>>>>> Stashed changes
+
 }

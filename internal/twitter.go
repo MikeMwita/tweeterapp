@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"github.com/MikeMwita/tweeterapp/internal/common"
+	"github.com/MikeMwita/tweeterapp.git/internal/common"
 	"log"
 )
 

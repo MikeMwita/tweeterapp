@@ -1,24 +1,10 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-*/
 package main
 
 import (
 	"fmt"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 	"github.com/MikeMwita/tweeterapp.git/cmd"
-=======
-	"github.com/MikeMwita/tweeterapp/cmd"
-	"github.com/MikeMwita/tweeterapp/internal/platform/twitter"
+	"github.com/MikeMwita/tweeterapp.git/internal/platform/twitter"
 	"log"
->>>>>>> Stashed changes
-=======
-	"github.com/MikeMwita/tweeterapp/cmd"
-	"github.com/MikeMwita/tweeterapp/internal/platform/twitter"
-	"log"
->>>>>>> Stashed changes
 )
 
 func getClient() error {
@@ -30,18 +16,9 @@ func getClient() error {
 	}
 }
 func main() {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	fmt.Println("Our twitter bot")
 
-=======
 	getClient()
 	fmt.Println("Our twitter bot")
->>>>>>> Stashed changes
-=======
-	getClient()
-	fmt.Println("Our twitter bot")
->>>>>>> Stashed changes
 	cmd.Execute()
 
 }

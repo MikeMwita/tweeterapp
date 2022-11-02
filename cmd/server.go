@@ -2,27 +2,21 @@ package cmd
 
 import (
 	"fmt"
-	"log"
+	"github.com/spf13/cobra"
 )
-var (
-	localRootFlag bool
-serverCmd = &cobra.Command{
+
+var serverCmd = &cobra.Command{
 	Use:   "serve",
-	Short: "Used to listen and serve the tweets",
-	Long:  `Listens for tweets with the hashtag Kipchoge and serves them via twitterAPI:`,
+	Short: "A brief description of your command",
+	Long: `A longer description that spans multiple lines and likely contains examples
+and usage of using your command.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("server called")
 	},
-)
 }
-func main() {
-	if err := rootCmd.Execute(); err != nil {
-		log.Fatal(err)
-	}
-}
+
 func init() {
-	fmt.Println("Inside the init function")
-	cobra.onInitialize(initConfig)
 	rootCmd.AddCommand(serverCmd)
-	rootCmd.PersistentFlags().BoolvarP(&localRootFlag,"local flag","l",false,"local root flag")
+
+	erverCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

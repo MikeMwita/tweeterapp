@@ -2,57 +2,25 @@ package twitter
 
 import (
 	"github.com/MikeMwita/tweeterapp/config"
-	"github.com/dghubble/go-twitter/twitter"
-	"github.com/dghubble/oauth1"
-	"log"
+	"github.com/MikeMwita/tweeterapp/internal/common"
+	"github.com/MikeMwita/tweeterapp/internal/models"
+	"net/http"
 )
-type Tw struct {
-	Search  *SearchService
-	Streams *StreamService
 
-	//add  the expected twitter api serrvices
-
+type Client struct {
+	tweet *http.Client
 }
 
-func NewClient(cfg *config.Config) (*Tw, error) {
-	//passing in the keys
-	config := oauth1.NewConfig(config.ck, config.csk)
-	//tokens
-	token := oauth1.NewToken(config.At, config.Ats)
-	httpClient := config.Client(oauth1.NoContext, token)
-
-
-	//initializing the twitter client
-
-	client := twitter.NewClient(httpClient)
-	client,err :=getClient(&config){
-		if err!=nil{
-			log.Println("The tweeter client is unreachable")
-			log.Println(err)
-		}
-	}
-
-	// send a tweet
-
-	tweet, resp, err := client.Statuses.Update("setting up a twitter client", nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("%v\n",tweet)
-	log.Printf("%v\n",resp)
+func (c Client) Auth() error {
+	//TODO implement me
+	panic("implement me")
 }
 
-//search for a tweet
-type search struct {
-	search, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
-		Query:"kipchoge"
-	})
-
-	if err!=nil{
-		log.Fatal(err)
-}
-	log.printf("%v",search)
-	log.printf("%v",resp)
-
+func (c Client) Search() ([]models.Tweet, error) {
+	//TODO implement me
+	panic("implement me")
 }
 
+func NewClient(cfg *config.Config) (common.TweetInterface, error) {
+	return &Client{}, nil
+}

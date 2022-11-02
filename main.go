@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/MikeMwita/tweeterapp.git/cmd"
-)
+import "github.com/MikeMwita/tweeterapp/cmd"
 
 func main() {
 	cmd.Execute()

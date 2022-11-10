@@ -3,7 +3,6 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/MikeMwita/tweeterapp/internal/app"
 	"github.com/spf13/cobra"
 )
 

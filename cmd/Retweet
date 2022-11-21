@@ -1,0 +1,26 @@
+package cmd
+
+import (
+	"fmt"
+
+	"github.com/MikeMwita/tweeterapp/internal/app"
+	"github.com/spf13/cobra"
+)
+
+var retweetCmd = &cobra.Command{
+
+Use:"Used for searching the twitter handles ",
+Short: "Searches for the twiiter handles that have the name Kipchoge in them",
+Long:"",
+
+Run: func(cmd *cobra.Command, args []string) {
+	fmt.Println("Retweeting..")
+	err := app.Initialize()
+	if err != nil {
+		panic(err)
+	}
+},
+
+
+
+}

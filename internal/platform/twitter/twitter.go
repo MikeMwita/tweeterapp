@@ -1,19 +1,119 @@
 package twitter
 
 import (
+	"log"
+	"net/http"
 	"github.com/MikeMwita/tweeterapp/config"
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	"github.com/dghubble/go-twitter/twitter"
+	"github.com/dghubble/oauth1"
+	"log"
+=======
+	"github.com/MikeMwita/tweeterapp/internal/common"
+	"github.com/MikeMwita/tweeterapp/internal/models"
+>>>>>>> Stashed changes
 )
 
 type Tw struct {
-	client
+	Search  *SearchService
+	Streams *StreamService
+}
+func NewClient(cfg *config.Config) (*Tw, error) {
+	//passing in the keys
+	config := oauth1.NewConfig(config.ck, config.csk)
+	//tokens
+	token := oauth1.NewToken(config.At, config.Ats)
+	httpClient := config.Client(oauth1.NoContext, token)
+	
+	//initializing the twitter client
+	client := twitter.NewClient(httpClient)
+	client,err :=getClient(&config){
+		if err!=nil{
+			log.Println("The tweeter client is unreachable")
+			log.Println(err)
+		}
+	}
+	// send a tweet
+=======
+	"log"
+)
+type Client struct {
+	return  common.Socialinterface()
 }
 
 func NewClient(cfg *config.Config) (*Tw, error) {
-	httpAuth, err := generateAuth(cfg)
-	c := twitter.NewClient()
+	config := oauth1.NewConfig(config.ConsumerKey, config.ConsumerSecret)
+	token := oauth1.NewToken(config.AccessToken, config.AccessTokenSecret)
+	httpClient := config.Client(oauth1.NoContext, token)
+}
+>>>>>>> Stashed changes
+=======
+	"log"
+)
+type Client struct {
+	return  common.Socialinterface()
+=======
+
+func (c Client) Auth() error {
+client:=twitter.NewClient(httpClient)
+httpClient=config.Client()
+
+// 	config:= oauth1.NewConfig("CONSUMER_KEY", "CONSUMER_SECRET")
+// token := oauth1.NewToken("ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
+
+
+
+	panic("implement me")
 }
 
-func generateAuth(cfg *config.Config) {
-	cfg := oauth1
+func (c Client) Search() ([]models.Tweet, error) {
+	Client.Search.tweet(&tweet)
+	search, resp, err := client.Search.Tweets(&TwitterService){
+		Query: "Kipchoge",
+	}
+
+	if err != nil {
+		log.Print(err)
+	}
+	panic("implement me")
+>>>>>>> Stashed changes
 }
+func NewClient(cfg *config.Config) (*Tw, error) {
+	config := oauth1.NewConfig(config.ConsumerKey, config.ConsumerSecret)
+	token := oauth1.NewToken(config.AccessToken, config.AccessTokenSecret)
+	httpClient := config.Client(oauth1.NoContext, token)
+}
+>>>>>>> Stashed changes
+	tweet, resp, err := client.Statuses.Update("setting up a twitter client", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("%v\n",tweet)
+	log.Printf("%v\n",resp)
+}
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+
+//search for a tweet
+type search struct {
+	search, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
+=======
+func search()err {
+	search,resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
+>>>>>>> Stashed changes
+=======
+func search()err {
+	search,resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
+>>>>>>> Stashed changes
+		Query:"kipchoge"
+	})
+	if err!=nil{
+		log.Fatal(err)
+}
+	log.printf("%v",search)
+	log.printf("%v",resp)
+}
+
+

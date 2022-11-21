@@ -1,5 +1,5 @@
-module github.com/MikeMwita/tweeterapp
+module github.com/MikeMwita/tweeterapp.git
 
 go 1.16
 
-require github.com/dghubble/go-twitter v0.0.0-20220816163853-8a0df96f1e6d // indirect
+require github.com/spf13/cobra v1.6.1
